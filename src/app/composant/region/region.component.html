@@ -1,0 +1,26 @@
+
+<div class="container" *ngIf="regions">
+  <table class="table  table-striped table-bordered">
+    <thead class="thead-dark">
+    <tr>
+      <th>ID</th>
+      <th>NOM</th>
+      <th>Nombre de bureaux</th>
+      <th>nombre d'électeurs</th>
+      <th>SUFFARGES VALABLES</th>
+      <th>SUFFRAGES INVALIDES</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let region of regions ">
+
+      <td>{{region.id}}</td>
+      <td>{{region.name}}</td>
+      <td>{{region.bureaux}}</td>
+      <td>{{region.electeurs}}</td>
+      <td>{{region.suffrage_invalide}}</td>
+      <td>{{region.suffrage_valable}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
