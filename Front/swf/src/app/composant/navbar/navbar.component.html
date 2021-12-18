@@ -15,15 +15,23 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/register">register</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/region">regions</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/departement">departements</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/carte">Carte</a>
-        </li>
+
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+           Voir les résultats
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li class="dropdown-item">
+              <a class="nav-link" routerLink="/region">regions</a>
+            </li>
+            <li class="dropdown-item">
+              <a class="nav-link" routerLink="/departement">departements</a>
+            </li>
+            <li class="dropdown-item">
+              <a class="nav-link" routerLink="/carte">Carte</a>
+            </li>
+          </ul>
+        </div>
 
       </ul>
     </div>
