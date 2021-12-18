@@ -1,0 +1,71 @@
+<div class="form-bg">
+  <div class="container">
+    <div class="row">
+      <div class=" col-md-offset-2 col-md-10">
+        <div class="form-container">
+          <div class="form-icon">
+            <i class="fa fa-user-circle"></i>
+            <span class="signup"><a routerLink="/login">Se connecter</a></span>
+          </div>
+          <form [formGroup]="validateForm" (ngSubmit)="submitForm()" class="form-horizontal">
+            <h3 class="title">Formulaire d'inscription</h3>
+
+            <div class="form-group">
+              <span class="input-icon"><i class="fa fa-id-card"></i></span>
+              <label for="cni"></label>
+              <input [(ngModel)]="electeur.cni" formControlName="cni" name="cni" type="number" id="cni" class="form-control" placeholder="CNI" >
+            </div>
+            <div class="form-group">
+              <span class="input-icon"><i class="fa fa-user-circle"></i></span>
+              <label for="nom"></label>
+              <input [(ngModel)]="electeur.firstname" formControlName="firstname" name="nom" type="text" id="nom" class="form-control" placeholder="Nom">
+            </div>
+            <div class="form-group">
+              <span class="input-icon"><i class="fa fa-user"></i></span>
+              <label for="prenom"></label>
+              <input [(ngModel)]="electeur.lastname" formControlName="lastname" name="prenom" type="text" id="prenom" class="form-control" placeholder="Prénom">
+            </div>
+            <div class="form-group">
+              <span class="input-icon"><i class="fa fa-map-marker"></i></span>
+              <label for="adresse"></label>
+              <input class="form-control" [(ngModel)]="electeur.address" formControlName="address" type="text" id="adresse" placeholder="Adresse">
+            </div>
+
+            <div class="form-group">
+              <span class="input-icon"><i class="fa fa-envelope"></i></span>
+              <label for="email"></label>
+              <input class="form-control" [(ngModel)]="electeur.email" formControlName="email" type="email
+                " id="email" placeholder="Votre mail">
+            </div>
+            <div class="form-group">
+              <span class="input-icon"><i class="fa fa-calendar"></i></span>
+              <label for="dateNaissance"></label>
+              <input class="form-control" [(ngModel)]="electeur.birthday" formControlName="birthday" type="date
+                " id="dateNaissance" placeholder="Date de Naissance">
+            </div>
+            <div class="form-group">
+              <span class="input-icon"><i class="fa fa-id-card"></i></span>
+              <label for="bureau"></label>
+              <input [(ngModel)]="electeur.bureau_id" formControlName="bureau_id" name="bureau" type="number" id="bureau" class="form-control" placeholder="Bureau de vote" >
+            </div>
+            <div class="form-group">
+              <span class="input-icon"><i class="fa fa-id-card"></i></span>
+              <label for="commune"></label>
+              <input [(ngModel)]="electeur.commune_id" formControlName="commune_id" name="cni" type="number" id="commune" class="form-control" placeholder="Commune" >
+            </div>
+            <div class="form-group">
+              <span class="input-icon"><i class="fa fa-lock"></i></span>
+              <label for="password"></label>
+              <input class="form-control" [(ngModel)]="electeur.password" formControlName="password" type="password" id="password" placeholder="Mot de Passe" >
+            </div>
+
+            <button class="btn signin" [disabled]="!validateForm.valid" (click)="Inscription()">S'inscrire</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<pre>
+   {{validateForm.value | json }}
+</pre>
