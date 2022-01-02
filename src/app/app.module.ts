@@ -12,6 +12,11 @@ import {Router, RouterModule} from "@angular/router";
 import {AppRoutingModule} from "./app-routing.module";
 import { IndexComponent } from './composant/index/index.component';
 import { DepartementComponent } from './composant/departement/departement.component';
+import { MapComponent } from './composant/map/map.component';
+import {MarkerServices} from "../services/marker.services";
+import { PopUpServices} from "../services/popup.services";
+import { FooterComponent } from './composant/footer/footer.component';
+import { ResultatsComponent } from './composant/resultats/resultats.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +26,10 @@ import { DepartementComponent } from './composant/departement/departement.compon
     NavbarComponent,
     RegionComponent,
     IndexComponent,
-    DepartementComponent
+    DepartementComponent,
+    MapComponent,
+    FooterComponent,
+    ResultatsComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +39,10 @@ import { DepartementComponent } from './composant/departement/departement.compon
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    MarkerServices,
+    PopUpServices
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

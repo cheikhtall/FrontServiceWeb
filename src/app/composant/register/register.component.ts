@@ -29,7 +29,7 @@ export class RegisterComponent implements OnInit {
       email: [null, Validators.required],
       password: [null, Validators.required],
       bureau_id: [null, Validators.required],
-      commune_id: [null, Validators.required],
+      commune_id: [null, Validators.required]
     });
   }
 
@@ -45,7 +45,7 @@ export class RegisterComponent implements OnInit {
   Inscription()
   {
     // @ts-ignore
-    this.http.post("http://127.0.0.1:5000/api/elector/register",this.elector,{
+    this.http.post("http://127.0.0.1:5000/api/elector/register",this.electeur,{
       headers:{
         "accept": "application/json",
         "content-type":"application/json"

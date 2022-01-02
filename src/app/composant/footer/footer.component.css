@@ -1,0 +1,27 @@
+.footer{
+  margin-top: 45px;
+}
+.scrollToTop-Btn{
+  z-index: 999;
+  position: fixed;
+  background: #0bb432;
+  color: #d31818;
+  width: 45px;
+  height: 45px;
+  right: 0;
+  bottom: 10px;
+  font-size: 22px;
+  text-align: center;
+  line-height: 45px;
+  border-radius: 3px;
+  cursor: pointer;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.3s ease;
+  margin-right: 75px;
+}
+.scrollToTop-Btn.active{
+  right: 20px;
+  opacity: 1;
+  pointer-events: auto;
+}

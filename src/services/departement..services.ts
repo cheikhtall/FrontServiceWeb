@@ -7,6 +7,7 @@ import {Departement} from "../app/model/departement.model";
 export class DepartementServices {
   private serveur = "http://localhost:5000/api/departement";
   constructor(private http:HttpClient) {}
+
   listeDepartements():Observable<Departement[]>{
     return this.http.get<Departement[]>(this.serveur, {
       headers: this.authorizationHeaders,

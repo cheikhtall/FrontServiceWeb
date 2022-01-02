@@ -1,0 +1,28 @@
+<footer class="text-center text-white footer" style="background-color: #FFF;">
+
+  <!-- Grid container -->
+  <div class="container p-4"></div>
+  <!-- Grid container -->
+  <div class="scrollToTop-Btn">
+    <i class="fas fa-angle-up"></i>
+  </div>
+  <!-- Copyright -->
+  <div class="text-black text-center p-3" style="background-color: rgba(0, 0, 0, 0);">
+    © 2020 Copyright:
+    <a class="text-black" >Eelection</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<script>
+  //Javascript pour le bouton de scroll vers le haut
+  const scrollBtn = document.querySelector(".scrollToTop-Btn");
+
+  window.addEventListener("scroll", function(){
+    scrollBtn.classList.toggle("active", window.scrollY > 10);
+  });
+  //javascript pour le scroll vers le haut
+  scrollBtn.addEventListener("click", () =>{
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  });
+</script>
