@@ -7,17 +7,22 @@
             <i class="fa fa-user-circle"></i>
             <span class="signup"><a routerLink="/register">Pas encore de compte? Cliquez ici</a></span>
           </div>
-          <form class="form-horizontal">
+          <form class="form-horizontal" #f="ngForm" [formGroup]="validateForm" (ngSubmit)="connecter(f.value)">
             <h3 class="title">Formulaire de connexion</h3>
+            <div *ngIf="invalidLogin" class="alert alert-danger">
+              CNI ou mot de passe invalide
+            </div>
             <div class="form-group">
               <span class="input-icon"><i class="fa fa-id-card"></i></span>
-              <input class="form-control" type="text" placeholder="CNI">
+              <label>CNI</label>
+              <input [(ngModel)]="login.cni" formControlName="cni" name="cni" type="number" id="cni" class="form-control" placeholder="CNI">
             </div>
             <div class="form-group">
               <span class="input-icon"><i class="fa fa-lock"></i></span>
-              <input class="form-control" type="password" placeholder="MOT DE PASSE">
+              <label>Mot de passe</label>
+              <input [(ngModel)]="login.password" formControlName="password" name="password" type="password" id="password" class="form-control" placeholder="Mot de passe">
             </div>
-            <button class="btn signin">Se connecter</button>
+            <button class="btn signin" [disabled]="!validateForm.valid" >Se connecter</button>
             <span class="forgot-pass"><a href="#"> Login / Mot de passe oublié?</a></span>
           </form>
         </div>

@@ -53,6 +53,7 @@ export class RegisterComponent implements OnInit {
     }).subscribe({
       next: res => {
         console.log(res)
+
         alert ('Enregistré avec succes')
       },
       error: error => {
