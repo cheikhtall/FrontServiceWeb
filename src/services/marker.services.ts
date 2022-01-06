@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import * as L from 'leaflet';
 import {Region} from "../app/model/region.model";
 import {RegionServices} from "./region.services";
-import {geoJSON, marker} from "leaflet";
 
 @Injectable({
   providedIn: 'root'
@@ -46,22 +45,18 @@ makeCapitalMarkers(map: L.Map): void {
           '<p> Nombre de bureaux :'+prop.bureaux+'</p>'+
           '<p> Nombre d\'électeurs :'+prop.electeurs+'</p>'+
           '<p> Suffrages Valides :'+prop.suffrageValable+'</p>'+
-          '<p> Nombre Invalides :'+prop.suffrageInvalide+'</p>')
+          '<p> Nombre Invalides :'+prop.suffrageInvalide+'</p>');
+        marker.on('mouseover', function (e) {
+          marker.openPopup();
+        });
+        marker.on('mouseout', function (e) {
+          marker.closePopup();
+        });
 
         marker.addTo(map)
       }
     });
 
-
- /* function onClick() {
-    '<p> Nom :'+prop.region+'</p>'+
-          '<p> Nombre de bureaux :'+prop.bureaux+'</p>'+
-          '<p> Nombre d\'électeurs :'+prop.electeurs+'</p>'+
-          '<p> Suffrages Valides :'+prop.suffrageValable+'</p>'+
-          '<p> Nombre Invalides :'+prop.suffrageInvalide+'</p>')
-
-
-   */
 
      }
 
